@@ -126,6 +126,10 @@ const totalTimeEl = document.getElementById('totalTime');
 const songCard = document.getElementById('songCard');
 const vinyl = document.getElementById('vinyl');
 
+function playMusic() {
+  document.getElementById("bg-music").play();
+}
+
 function initMusicPlayer() {
   audioPlayer = document.getElementById('audioPlayer');
   
