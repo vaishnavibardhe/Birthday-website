@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday 🎂</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Satisfy&family=Lora:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- MP3 Audio Player -->
+  <audio id="audioPlayer" preload="metadata" loop>
+    <source src="khat-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+</head>
+
+<body>
+
+  <!-- Hidden YouTube Player (Zero size, audio only) -->
+  <div id="ytPlayer" style="position:absolute;width:0;height:0;overflow:hidden;"></div>
+
+  <!-- Floating hearts -->
+  <div class="floating-hearts" id="fhearts"></div>
+
+  <!-- Page tabs -->
+  <div class="page-tabs" id="pageTabs"></div>
+
+  <!-- PAGE 1 — PASSCODE LOCK -->
+  <div class="page active" id="p1">
+    <div style="position:absolute;left:calc(50% - 200px);top:50%;transform:translateY(-50%);">
+      <svg class="stitch-svg" viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="80" cy="110" rx="52" ry="58" fill="#4a90d9" />
+        <circle cx="80" cy="68" r="46" fill="#4a90d9" />
+        <ellipse cx="38" cy="28" rx="14" ry="28" fill="#4a90d9" transform="rotate(-20 38 28)" />
+        <ellipse cx="38" cy="28" rx="8" ry="18" fill="#6ab0f0" transform="rotate(-20 38 28)" />
+        <ellipse cx="122" cy="28" rx="14" ry="28" fill="#4a90d9" transform="rotate(20 122 28)" />
+        <ellipse cx="122" cy="28" rx="8" ry="18" fill="#6ab0f0" transform="rotate(20 122 28)" />
+        <ellipse cx="80" cy="78" rx="30" ry="22" fill="#6ab0f0" />
+        <ellipse cx="64" cy="58" rx="10" ry="11" fill="#fff" />
+        <ellipse cx="96" cy="58" rx="10" ry="11" fill="#fff" />
+        <circle cx="66" cy="60" r="6" fill="#1a1a2e" />
+        <circle cx="98" cy="60" r="6" fill="#1a1a2e" />
+        <circle cx="68" cy="57" r="2" fill="#fff" />
+        <circle cx="100" cy="57" r="2" fill="#fff" />
+        <ellipse cx="80" cy="72" rx="6" ry="4" fill="#2855a0" />
+        <path d="M68 80 Q80 90 92 80" stroke="#1a3060" stroke-width="2" fill="none" stroke-linecap="round" />
+        <ellipse cx="28" cy="120" rx="14" ry="30" fill="#4a90d9" transform="rotate(-15 28 120)" />
+        <ellipse cx="132" cy="120" rx="14" ry="30" fill="#4a90d9" transform="rotate(15 132 120)" />
+        <ellipse cx="80" cy="120" rx="28" ry="26" fill="#6ab0f0" />
+        <ellipse cx="62" cy="158" rx="16" ry="20" fill="#4a90d9" />
+        <ellipse cx="98" cy="158" rx="16" ry="20" fill="#4a90d9" />
+        <ellipse cx="62" cy="172" rx="18" ry="10" fill="#3a7abd" />
+        <ellipse cx="98" cy="172" rx="18" ry="10" fill="#3a7abd" />
+        <ellipse cx="38" cy="22" rx="5" ry="12" fill="#f0a0c0" transform="rotate(-20 38 22)" />
+        <ellipse cx="122" cy="22" rx="5" ry="12" fill="#f0a0c0" transform="rotate(20 122 22)" />
+      </svg>
+    </div>
+
+    <div class="passcode-panel">
+      <div class="passcode-label">Enter a passcode</div>
+      <div class="code-boxes" id="codeBoxes">
+        <div class="code-box" id="cb0"></div>
+        <div class="code-box" id="cb1"></div>
+        <div class="code-box" id="cb2"></div>
+        <div class="code-box" id="cb3"></div>
+      </div>
+      <div class="numpad" id="numpad">
+        <button class="numpad-btn" data-n="1">1</button>
+        <button class="numpad-btn" data-n="2">2</button>
+        <button class="numpad-btn" data-n="3">3</button>
+        <button class="numpad-btn" data-n="4">4</button>
+        <button class="numpad-btn" data-n="5">5</button>
+        <button class="numpad-btn" data-n="6">6</button>
+        <button class="numpad-btn" data-n="7">7</button>
+        <button class="numpad-btn" data-n="8">8</button>
+        <button class="numpad-btn" data-n="9">9</button>
+        <button class="numpad-btn del" data-n="del">⌫</button>
+        <button class="numpad-btn zero" data-n="0">0</button>
+        <button class="numpad-btn" data-n="#">#</button>
+      </div>
+      <div class="hint-text">hint: it's the day we met 💙</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2 — BIRTHDAY CAKE -->
+  <div class="page" id="p2">
+    <div class="cake-page">
+      <div class="make-wish">Make a wish 🌟</div>
+      <div class="hbd-text">happy birthday my love 🎂</div>
+
+      <div class="cake-wrap">
+        <div class="star" style="top:-20px; left:20px;animation-delay:0s">✦</div>
+        <div class="star" style="top:-10px;right:30px;animation-delay:0.4s">✦</div>
+        <div class="star" style="bottom:10px; left:-20px;animation-delay:0.8s">✦</div>
+        <div class="star" style="bottom:20px;right:-10px;animation-delay:1.2s">✦</div>
+
+        <svg class="cake-svg" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="140" cy="200" rx="110" ry="14" fill="#d4b896" opacity="0.6" />
+          <rect x="30" y="140" width="220" height="60" rx="12" fill="#f0c080" />
+          <rect x="30" y="140" width="220" height="14" rx="6" fill="#e8b070" />
+          <path d="M30 140 Q55 128 80 140 Q105 128 130 140 Q155 128 180 140 Q205 128 230 140 Q240 128 250 140"
+            fill="#fff9f5" stroke="#f0e0d0" stroke-width="1" />
+          <rect x="60" y="90" width="160" height="52" rx="10" fill="#f8d090" />
+          <rect x="60" y="90" width="160" height="12" rx="5" fill="#f0c080" />
+          <path d="M60 90 Q80 78 100 90 Q120 78 140 90 Q160 78 180 90 Q200 78 220 90" fill="#fff9f5" stroke="#f0e0d0"
+            stroke-width="1" />
+          <circle cx="90" cy="165" r="8" fill="#e05080" />
+          <circle cx="140" cy="168" r="6" fill="#50a0e0" />
+          <circle cx="190" cy="165" r="8" fill="#e05080" />
+          <circle cx="115" cy="163" r="5" fill="#f0c030" />
+          <circle cx="165" cy="163" r="5" fill="#f0c030" />
+          <rect x="90" y="52" width="12" height="40" rx="4" fill="#f06080" />
+          <rect x="120" y="48" width="12" height="44" rx="4" fill="#60b0f0" />
+          <rect x="150" y="52" width="12" height="40" rx="4" fill="#f0c040" />
+          <rect x="178" y="50" width="12" height="42" rx="4" fill="#80d090" />
+          <rect x="207" y="54" width="12" height="38" rx="4" fill="#d080f0" />
+          <g class="flame">
+            <ellipse cx="96" cy="48" rx="6" ry="9" fill="#ffd040" opacity="0.9" />
+            <ellipse cx="96" cy="46" rx="3" ry="5" fill="#fff0a0" />
+          </g>
+          <g class="flame" style="animation-delay:0.15s">
+            <ellipse cx="126" cy="44" rx="6" ry="9" fill="#ffd040" opacity="0.9" />
+            <ellipse cx="126" cy="42" rx="3" ry="5" fill="#fff0a0" />
+          </g>
+          <g class="flame" style="animation-delay:0.3s">
+            <ellipse cx="156" cy="48" rx="6" ry="9" fill="#ffd040" opacity="0.9" />
+            <ellipse cx="156" cy="46" rx="3" ry="5" fill="#fff0a0" />
+          </g>
+          <g class="flame" style="animation-delay:0.08s">
+            <ellipse cx="184" cy="46" rx="6" ry="9" fill="#ffd040" opacity="0.9" />
+            <ellipse cx="184" cy="44" rx="3" ry="5" fill="#fff0a0" />
+          </g>
+          <g class="flame" style="animation-delay:0.22s">
+            <ellipse cx="213" cy="50" rx="6" ry="9" fill="#ffd040" opacity="0.9" />
+            <ellipse cx="213" cy="48" rx="3" ry="5" fill="#fff0a0" />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <button class="next-btn" onclick="goNext()">NEXT →</button>
+  </div>
+
+  <!-- PAGE 3 — SOULMATES -->
+  <div class="page" id="p3">
+    <div class="soulmates-layout">
+      <div class="soul-left">
+        <div class="soul-headline">the girl who proved<br><em>"soulmates are real"</em></div>
+        <p class="soul-quote">A person with whom you have an immediate connection the moment you meet — a connection so
+          strong that you are drawn to them in a way you have never experienced before. As this connection develops over
+          time, you can experience a love so deep, strong and complex, that you begin to doubt that you have ever truly
+          loved anyone prior.</p>
+        <div class="ilove-note">i love you ♡</div>
+      </div>
+      <div class="soul-right">
+        <div class="soul-label">Favorite person.</div>
+        <div class="photo-placeholder photo-main">
+          <div class="ph">📷</div>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <div class="photo-placeholder photo-small">
+            <div class="ph">❤️</div>
+          </div>
+          <div class="photo-placeholder photo-small">
+            <div class="ph">🌟</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="next-btn dark" onclick="goNext()">NEXT →</button>
+  </div>
+
+  <!-- PAGE 4 — LOVE LETTER -->
+  <div class="page" id="p4">
+    <div class="letter-wrap">
+      <div class="envelope">
+        <div class="envelope-top"></div>
+        <div class="letter-body">
+          <div class="letter-title">A Love Letter</div>
+          <div class="letter-meta">
+            <span>To: <b>My Love</b></span>
+            <span>Date: <b>Your Birthday</b></span>
+          </div>
+          <div class="letter-photo-row">
+            <div class="letter-photo">
+              <div class="ph">❤️</div>
+            </div>
+            <div class="letter-photo">
+              <div class="ph">📷</div>
+            </div>
+          </div>
+          <div class="letter-greeting">My love, Jigna,</div>
+          <p class="letter-body-text">
+            My love, from the very moment you came into my life, everything became more beautiful and meaningful. Your
+            laughter lights up every room, your kindness touches every heart, and your love has made me the luckiest
+            person in this entire world.<br><br>
+            I love the way you smile when you think no one is watching. I love how you care deeply for the people around
+            you. I love every little thing about you that makes you — uniquely, wonderfully <em>you</em>.<br><br>
+            On your special day, I want you to know that every single day with you is a gift I never want to return. May
+            this birthday bring you as much joy as you bring me every single day.
+          </p>
+          <div class="letter-sign">With all my love, always ♡</div>
+          <div class="heart-stamp">♥</div>
+        </div>
+      </div>
+    </div>
+    <button class="next-btn dark" onclick="goNext()">NEXT →</button>
+  </div>
+
+  <!-- PAGE 5 — HAPPY BIRTHDAY MSG -->
+  <div class="page" id="p5">
+    <div class="hbd-layout">
+      <div class="hbd-left">
+        <div class="hbd-small-text">I love you more than words can express.</div>
+        <div class="hbd-big">HAPPY<br>BIRTHDAY,<br>MY LOVE.</div>
+        <p class="hbd-sub">May our love continue to blossom and flourish forever.</p>
+        <div class="hbd-sub" style="margin-top:4px;">With all my heart,</div>
+        <div class="hbd-signature">helvi ♡</div>
+      </div>
+      <div class="hbd-right">
+        <div class="couple-photo">
+          <div class="ph">👩‍❤️‍👨</div>
+        </div>
+        <div class="kitty-sticker">😽</div>
+      </div>
+    </div>
+    <button class="next-btn dark" onclick="goNext()">NEXT →</button>
+  </div>
+
+  <!-- PAGE 6 — BEST MEMORIES -->
+  <div class="page" id="p6">
+    <div class="memories-layout">
+      <div class="memories-title">Best Memories ⭐</div>
+      <div class="memory-grid">
+        <div class="blue-star" style="top:-20px;right:60px;font-size:30px;">✦</div>
+        <div class="blue-star" style="bottom:10px;left:-20px;font-size:20px;">✦</div>
+        <div class="blue-star" style="top:40px;left:-30px;font-size:14px;">✦</div>
+
+        <div class="memory-card memory-card-lg">
+          <div class="ph" style="width:100%;height:160px;">📷</div>
+        </div>
+        <div class="memory-card memory-card-lg" style="margin-top:20px;">
+          <div class="ph" style="width:100%;height:160px;">❤️</div>
+        </div>
+        <div class="memory-card memory-card-sm">
+          <div class="ph" style="width:100%;height:120px;">🌅</div>
+        </div>
+        <div class="memory-card memory-card-sm" style="margin-top:-20px;">
+          <div class="ph" style="width:100%;height:120px;">🌟</div>
+        </div>
+
+        <div class="camera-icon">📷</div>
+      </div>
+      <div style="font-family:'Dancing Script',cursive;font-size:22px;color:#1a4a7a;">every moment with you is my
+        favourite 🌟</div>
+    </div>
+    <button class="next-btn" onclick="goNext()">NEXT →</button>
+  </div>
+
+  <!-- PAGE 7 — GIFTS FOR YOU -->
+  <div class="page" id="p7">
+    <div class="gifts-layout">
+      <div class="gifts-title">Gifts for you 🎁</div>
+      <div class="gifts-row">
+        <div class="gift-item" onclick="alert('💌 A love letter, just for you!')">
+          <div class="gift-icon">💌</div>
+          <div class="gift-label">love letter</div>
+        </div>
+        <div class="gift-item" onclick="alert('📷 A Polaroid of our best memory!')">
+          <div class="gift-icon">📷</div>
+          <div class="gift-label">polaroid</div>
+        </div>
+        <div class="gift-item" onclick="alert('🎵 A playlist made just for you!')">
+          <div class="gift-icon">🎵</div>
+          <div class="gift-label">our playlist</div>
+        </div>
+      </div>
+      <div class="click-hint">Click any of these ☝️</div>
+    </div>
+    <button class="next-btn" onclick="goNext()">NEXT →</button>
+  </div>
+
+  <!-- PAGE 8 — MUSIC / AUDIO PLAYER -->
+  <div class="page" id="p8">
+    <div class="music-layout">
+      <div class="song-card" id="songCard">
+        <div class="song-thumb">
+          <div class="ph">🎵</div>
+        </div>
+        <div class="song-info">
+          <div class="song-name">Khat</div>
+          <div class="song-artist">Navjot Ahuja</div>
+        </div>
+
+        <div class="visualizer" id="visualizer">
+          <div class="v-bar"></div>
+          <div class="v-bar"></div>
+          <div class="v-bar"></div>
+          <div class="v-bar"></div>
+          <div class="v-bar"></div>
+        </div>
+
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="song-controls">
+          <span id="currTime" style="color:rgba(255,255,255,0.8);font-size:11px;">0:00</span>
+          <button class="play-btn" id="playBtn" onclick="toggleMusic()">▶</button>
+          <span id="totalTime" style="color:rgba(255,255,255,0.8);font-size:11px;">0:00</span>
+        </div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);text-align:center;margin-top:2px;letter-spacing:0.05em;">
+          🎧 Now Playing On Page
+        </div>
+      </div>
+
+      <div class="vinyl-wrap" id="vinylWrap">
+        <div class="floating-note note1">♪</div>
+        <div class="floating-note note2">♫</div>
+        <div class="floating-note note3">♪</div>
+        <div class="vinyl" id="vinyl">
+          <div class="vinyl-label">Our Song ♪</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;padding-bottom:80px;">
+      <div style="font-family:'Dancing Script',cursive;font-size:28px;color:#555;">
+        this song is us ❤️
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
